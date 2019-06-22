@@ -25,8 +25,6 @@ export class DynamicFormComponent implements OnInit {
    });
   }
 
-
-
   public onClickSubmit(value : UserInfo): void{
     debugger;
   }

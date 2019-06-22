@@ -5,17 +5,18 @@
 <form [formGroup]="userInfo" (ngSubmit)="onClickSubmit(userInfo.value)">
   <input type="text" name="name" formControlName="name" placeholder="Enter name">
   <label *ngIf="userInfo.controls['name'].touched && 
-                userInfo.controls['name'].invalid"> Not valid </label>
+                userInfo.controls['name'].invalid"> 
+                Not valid, name must be more than 5 symbols </label>
   <br />
 
   <input type="number" name="age" formControlName="age" placeholder="Enter age">
   <label *ngIf="userInfo.controls['age'].touched && 
-                userInfo.controls['age'].invalid"> Not valid </label>
+                userInfo.controls['age'].invalid"> Not valid, min age is 10</label>
   <br />
 
   <input type="text" name="email" formControlName="email" placeholder="Enter email">
   <label *ngIf="userInfo.controls['email'].touched && 
-                userInfo.controls['email'].invalid"> Not valid </label>
+                userInfo.controls['email'].invalid"> Required </label>
   <br />
 
   <label>Gender</label>
@@ -23,8 +24,6 @@
     <option *ngFor="let g of gender" [value]="g">{{g}}
     </option>
   </select>
-  <label *ngIf="userInfo.controls['gender'].touched && 
-                userInfo.controls['gender'].invalid"> Not valid </label>
   <br />
 
   <input type="submit" value="Save" [disabled]="userInfo.invalid">

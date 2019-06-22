@@ -2,7 +2,6 @@
   dynamic-form works!
 </p>
 
-<!-- reactive -->
 <form [formGroup]="userInfo" (ngSubmit)="onClickSubmit(userInfo.value)">
   <input type="text" name="name" formControlName="name" placeholder="Enter name">
   <label *ngIf="userInfo.controls['name'].touched && 

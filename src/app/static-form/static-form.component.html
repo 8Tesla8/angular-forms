@@ -2,8 +2,7 @@
   static-form works!
 </p>
 
-<!-- static -->
-<form #userlogin = "ngForm" (ngSubmit) = "onClickSubmitStatic(userlogin.value)" >
+<form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
   <input type = "text" name = "email" placeholder = "email" ngModel>
   <br/>
   <input type = "password" name = "password" placeholder = "password" ngModel>

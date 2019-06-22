@@ -10,19 +10,31 @@ export class DynamicFormComponent implements OnInit {
 
   constructor() { }
   
-  public formdata: FormGroup;
+  public gender = ['female', 'men'];
+
+  public userInfo: FormGroup;
 
   ngOnInit() {
-    this.formdata = new FormGroup({
-      name: new FormControl(Validators.required),
-      age: new FormControl(Validators.required),
-      email: new FormControl(Validators.required)
+    //first parameter in FormControl is value
+
+    this.userInfo = new FormGroup({
+      name: new FormControl('',[Validators.required, Validators.minLength(5)]),
+      age: new FormControl('',[Validators.required, Validators.min(10)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      gender: new FormControl('', Validators.required)
    });
   }
 
 
 
-  public onClickSubmit(value : any): void{
-
+  public onClickSubmit(value : UserInfo): void{
+    debugger;
   }
+}
+
+export class UserInfo{
+  public name: string;
+  public age: string;
+  public email: string;
+  public gender: string;
 }

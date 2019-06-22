@@ -3,18 +3,34 @@
 </p>
 
 <!-- reactive -->
-<form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)" >
+<form [formGroup] = "userInfo" (ngSubmit) = "onClickSubmit(userInfo.value)" >
   <input type = "text" name = "name" formControlName="name"
     placeholder = "Enter name" >
+  <label *ngIf="userInfo.controls['name'].touched && 
+                userInfo.controls['name'].invalid" > Not valid </label>
   <br/>
   
-  <input type = "number" name="age" formControlName = "age"
+  <input type = "number" name = "age" formControlName = "age"
      placeholder = "Enter age" >
+  <label *ngIf="userInfo.controls['age'].touched && 
+                userInfo.controls['age'].invalid" > Not valid </label>
   <br/>
   
   <input type = "text" name="email" formControlName = "email"
      placeholder = "Enter email" >
+  <label *ngIf="userInfo.controls['email'].touched && 
+                userInfo.controls['email'].invalid" > Not valid </label>
   <br/>
 
-  <input type = "submit" value = "Log In">
+  <select name="gender" formControlName = "gender">
+    <!-- <option value="">Please select your gender</option> -->
+    <option *ngFor="let g of gender"
+            [value]="g">{{g}}
+    </option>
+  </select>
+  <label *ngIf="userInfo.controls['gender'].touched && 
+                userInfo.controls['gender'].invalid" > Not valid </label>
+  <br/>
+
+  <input type = "submit" value = "Save" [disabled]= "userInfo.invalid">
 </form>

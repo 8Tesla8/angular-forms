@@ -1,0 +1,20 @@
+<p>
+  dynamic-form works!
+</p>
+
+<!-- reactive -->
+<form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)" >
+  <input type = "text" name = "name" formControlName="name"
+    placeholder = "Enter name" >
+  <br/>
+  
+  <input type = "number" name="age" formControlName = "age"
+     placeholder = "Enter age" >
+  <br/>
+  
+  <input type = "text" name="email" formControlName = "email"
+     placeholder = "Enter email" >
+  <br/>
+
+  <input type = "submit" value = "Log In">
+</form>

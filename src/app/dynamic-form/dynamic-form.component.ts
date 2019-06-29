@@ -10,7 +10,7 @@ export class DynamicFormComponent implements OnInit {
 
   constructor() { }
   
-  public gender = ['female', 'men'];
+  public gender = ['female', 'male'];
 
   public userInfo: FormGroup;
 
